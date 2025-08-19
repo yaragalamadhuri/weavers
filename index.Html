@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All India Weavers Federation - Registration Form</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
+        body {
+            background-image: url('images/WhatsApp Image 2025-08-18 at 2.09.11 PM.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            background-image: url('images/weavers.png'); /* ✅ background image inside form */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            color: #000; /* Ensure text stays readable */
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.85); /* ✅ overlay for readability */
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e90ff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0f78d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <img src="images/logo.png" alt="Federation Logo" class="logo">
+        <h2>All India Weavers Federation</h2>
+        <form action="#" method="post" onsubmit="return showMessage()">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="state">State</label>
+            <select id="state" name="state" required>
+                <option value="">Select your state</option>
+                <option value="andhra-pradesh">Andhra Pradesh</option>
+                <option value="telangana">Telangana</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="tamil-nadu">Tamil Nadu</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="uttar-pradesh">Uttar Pradesh</option>
+                <option value="west-bengal">West Bengal</option>
+            </select>
+
+            <label for="weaving-type">Type of Weaving / Craft</label>
+            <input type="text" id="weaving-type" name="weaving-type" placeholder="E.g., Handloom, Ikat, Banarasi">
+
+            <label for="message">Additional Information</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter any additional details"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("Form submitted successfully!");
+            return false;
+        }
+    </script>
+</body>
+</html>
